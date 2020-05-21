@@ -12,13 +12,13 @@ export class UsersService {
   setToActive(id: number) {
     this.activeUsers.push(this.inactiveUsers[id]); // add to active list
     this.inactiveUsers.splice(id, 1); // remove from inactive list
-    this.counterService.incrementActiveToInactiveList();
+    this.counterService.incrementActiveToInactive();
   }
 
   setToInactive(id: number) {
     this.inactiveUsers.push(this.activeUsers[id]); // add to inactive list
     this.activeUsers.splice(id, 1); // remove from active list
-    this.counterService.incrementInactiveToActiveList();
+    this.counterService.incrementInactiveToActive();
   }
 
   constructor(private counterService: CounterService) { }
